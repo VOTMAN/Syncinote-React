@@ -4,6 +4,7 @@ import { MilkdownEditor, SaveButton } from "../components/MilkdownEditor";
 import { MilkdownProvider } from "@milkdown/react";
 import getNotes from "../utils/getNotes";
 import createNote from "../utils/createNote";
+import saveNote from "../utils/saveNote";
 import DeleteButton from "../components/DeleteButton";
 import { AskAi } from "../components/AskAi";
 import { useToast } from "../Context/ToastProvider";
@@ -39,7 +40,6 @@ const NotesPage = () => {
     setNotes(notes.map((n) => (n.id === updatedNote.id ? updatedNote : n)));
 
     try {
-      const { saveNote } = await import("@/utils/saveNote");
       await saveNote({ data: updatedNote });
       showToast("Note renamed!", "success");
     } catch (err) {
