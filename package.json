@@ -8,7 +8,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "start": "tsx "
+    "start": "tsx watch ser/index.ts"
   },
   "dependencies": {
     "express": "^5.1.0",
